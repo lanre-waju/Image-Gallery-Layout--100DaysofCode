@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Roboto', sans-serif;
+	font-size: 62.5%;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	background-color: #eee;
+	display: flex;
+}
+
+.container {
+	width: 100%;
+	max-width: 120rem;
+	margin: auto;
+	padding: 0 1.5rem;
+	padding: 5rem;
+}
+
+.image-gallery {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-gap: 1.5rem;
+	grid-template-areas: 'img-1 img-2 img-3 img-3' 'img-1 img-4 img-5 img-6' 'img-7 img-7 img-8 img-6';
+}
+
+.image-gallery a {
+	width: 100%;
+	height: 25rem;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+}
+
+.image-gallery a i {
+	color: rgba(255, 255, 255, .6);
+	font-size: 3rem;
+	position: relative;
+	z-index: 100;
+	padding: 1rem 3rem;
+	border: 2px solid rgba(255 255 255 .6);
+	border-radius: 4rem;
+	/* opacity: 0; */
+	transition: opacity .5s;
+}
+
+.image-gallery a::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, .8);
+	opacity: 0;
+	transition: opacity .5s;
+}
+
+.image-gallery a:hover i,
+.image-gallery a:hover::before {
+	opacity: 1;
+}
+
+.img-1 {
+	grid-area: img-1;
+	min-height: 51.5rem;
+	background-image: url('https://lh3.googleusercontent.com/proxy/3WbIvCeY50wk1NUu6NPjDc2qbZujDqI96DLMNBt-Yt5rBFdNF9k7Ut_1a5T-LBeTKpigSaluXTmB4_XuHkdfj46ums5w_uOdOu8PPf1mkz3edHIEge3WXmKP_BCr3-TUhvDB5rAYOKC4wp8w7mBt8tyz');
+}
+
+.img-2 {
+	grid-area: img-2;
+	background-image: url('https://www.aljazeera.com/wp-content/uploads/2020/10/AJE-WEBPHOTOS-ABUJA-NIGERIA-15.jpg?resize=1170%2C780');
+}
+
+.img-3 {
+	grid-area: img-3;
+	background-image: url('https://guardian.ng/wp-content/uploads/2020/10/EjzYRSnXcAA_0Gk.jpg');
+}
+
+.img-4 {
+	grid-area: img-4;
+	background-image: url('https://folio.ng/folio_upload/2020/10/EndSARS-protests-credit-unknown-from-@theayochase.jpg');
+}
+
+.img-5 {
+	grid-area: img-5;
+	background-image: url('https://i1.wp.com/media.premiumtimesng.com/wp-content/files/2020/10/Davido.jpg?fit=2048%2C1364&ssl=1');
+}
+
+.img-6 {
+	grid-area: img-6;
+	min-height: 51.5rem;
+	background-image: url('https://lh3.googleusercontent.com/proxy/3WbIvCeY50wk1NUu6NPjDc2qbZujDqI96DLMNBt-Yt5rBFdNF9k7Ut_1a5T-LBeTKpigSaluXTmB4_XuHkdfj46ums5w_uOdOu8PPf1mkz3edHIEge3WXmKP_BCr3-TUhvDB5rAYOKC4wp8w7mBt8tyz');
+}
+
+.img-7 {
+	grid-area: img-7;
+	background-image: url('https://www.aljazeera.com/wp-content/uploads/2020/10/AJE-WEBPHOTOS-ABUJA-NIGERIA-15.jpg?resize=1170%2C780ests-credit-unknown-from-@theayochase.jpg');
+}
+
+.img-8 {
+	grid-area: img-8;
+	background-image: url('https://folio.ng/folio_upload/2020/10/EndSARS-protests-credit-unknown-from-@theayochase.jpg');
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 900px) {
+	.image-gallery {
+		grid-template-columns: 'img-1 img-1 img-2 img-2' 'img-1 img-1 img-3 img-3' 'img-4 img-4 img-5 img-5'
+			'img-6 img-7 img-7 img-7' 'img-8 img-8 img-8 img-8';
+	}
+
+	.image-gallery a {
+		height: 20rem;
+	}
+
+	.img-1 {
+		min-height: 41.5rem;
+	}
+
+	.img-6 {
+		min-height: 20rem;
+	}
+}
